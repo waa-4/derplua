@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/28274304/README.md)
 # DerpLua v1
 
 DerpLua is a simple visual Roblox Lua behavior builder.
