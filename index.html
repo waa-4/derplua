@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DerpLua v1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div><h1>DerpLua</h1><p>Visual Roblox Lua behavior builder</p></div>
+      <div class="top-actions">
+        <button id="newProjectBtn">New</button><button id="saveBtn">Save</button><button id="loadBtn">Load</button><button id="exportProjectBtn">Export JSON</button><button id="importProjectBtn">Import JSON</button>
+      </div>
+    </header>
+    <main class="workspace">
+      <aside class="panel block-library">
+        <h2>Blocks</h2>
+        <label class="small-label">Script Target</label>
+        <select id="scriptTarget">
+          <option value="part">Script goes inside a Part</option>
+          <option value="server">Script goes in ServerScriptService</option>
+          <option value="starterPlayer">LocalScript goes in StarterPlayerScripts</option>
+          <option value="tool">Script goes inside a Tool</option>
+        </select>
+        <div id="blockCategories"></div>
+      </aside>
+      <section class="panel builder">
+        <div class="panel-head"><div><h2>Behavior Stack</h2><p>Click blocks to add them. Reorder with ↑ ↓.</p></div><button id="clearBlocksBtn">Clear</button></div>
+        <div class="event-box"><label>Event</label><select id="eventSelect"><option value="start">When script starts</option><option value="touched">When part is touched by player</option><option value="clicked">When ClickDetector is clicked</option><option value="prompt">When ProximityPrompt is triggered</option><option value="toolActivated">When tool is activated</option><option value="loop">Forever loop</option></select></div>
+        <div id="stack" class="stack empty"><div class="empty-message">No blocks yet. Add some from the left.</div></div>
+      </section>
+      <aside class="panel code-panel">
+        <div class="panel-head"><div><h2>Generated Lua</h2><p>Paste into Roblox Studio.</p></div><button id="copyCodeBtn">Copy</button></div>
+        <pre id="codeOutput"></pre>
+        <div class="help-box"><h3>How to use</h3><p id="usageHelp">Choose an event and add blocks. The code updates live.</p></div>
+      </aside>
+    </main>
+    <dialog id="jsonDialog"><form method="dialog"><h2 id="jsonDialogTitle">Project JSON</h2><textarea id="jsonBox" spellcheck="false"></textarea><div class="dialog-actions"><button id="jsonCancelBtn" value="cancel">Close</button><button id="jsonApplyBtn" value="apply">Apply Import</button></div></form></dialog>
+    <div id="toast"></div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
