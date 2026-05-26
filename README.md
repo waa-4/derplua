@@ -1,3 +1,4 @@
+[README.md](https://github.com/user-attachments/files/28274304/README.md)
 # DerpLua v1
 
 DerpLua is a simple visual Roblox Lua behavior builder.
@@ -30,3 +31,13 @@ Upload these files to a repo:
 - `main.js`
 
 Then enable GitHub Pages.
+
+
+## v1.1 additions
+
+- Push Objects Away
+- Pull Objects In
+- Black Hole Pull + Damage
+- Kill/Delete Nearby Parts
+- Delete Touching Thing
+- Delete Self
